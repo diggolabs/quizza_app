@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Quizza</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--dark);
+            color: white;
+            line-height: 1.7;
+        }
+
+        nav {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--gray);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: var(--light-gray);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Quizza</a>
+    </nav>
+
+    <div class="container">
+        <h1>How can we help?</h1>
+        <p class="subtitle">Get in touch with our support team or find answers below</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Support</h3>
+                <p>Get help from our team within 24 hours</p>
+                <a href="mailto:hello@diggolabs.tech">hello@diggolabs.tech</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🐛</div>
+                <h3>Report a Bug</h3>
+                <p>Found something wrong? Let us know</p>
+                <a href="mailto:hello@diggolabs.tech">hello@diggolabs.tech</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💡</div>
+                <h3>Feature Request</h3>
+                <p>Have an idea? We'd love to hear it</p>
+                <a href="mailto:hello@diggolabs.tech">hello@diggolabs.tech</a>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I create an account?</div>
+                <div class="faq-answer">
+                    <p>Download Quizza from the App Store, open the app, and tap "Sign Up". You can register with your email address or use Sign in with Apple for a quick setup.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the ELO ranking system work?</div>
+                <div class="faq-answer">
+                    <p>Our ELO system calculates your skill rating based on match outcomes. Beating higher-ranked players gives more points, while losing to lower-ranked players costs more. Everyone starts at 1000 ELO, and your rank adjusts after each match.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I play offline?</div>
+                <div class="faq-answer">
+                    <p>Multiplayer matches require an internet connection. We're working on a solo practice mode that will work offline in a future update.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I delete my account?</div>
+                <div class="faq-answer">
+                    <p>Go to Settings > Account > Delete Account. This will permanently remove your account and all associated data. This action cannot be undone.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">I found a bug. What should I do?</div>
+                <div class="faq-answer">
+                    <p>Please email us at hello@diggolabs.tech with a description of the issue, your device model, and iOS version. Screenshots or screen recordings are very helpful!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I report inappropriate behavior?</div>
+                <div class="faq-answer">
+                    <p>We take user safety seriously. To report a player, tap their profile after a match and select "Report User". You can also email us at hello@diggolabs.tech with details.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Are there in-app purchases?</div>
+                <div class="faq-answer">
+                    <p>Quizza is free to play. We may offer optional cosmetic items in the future, but gameplay will always remain free and fair for everyone.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which devices are supported?</div>
+                <div class="faq-answer">
+                    <p>Quizza requires iOS 15.0 or later and works on iPhone. iPad support is coming soon.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
