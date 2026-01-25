@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizza - The Trivia Quiz App</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="app-icon.png">
+    <link rel="apple-touch-icon" href="app-icon.png">
     <style>
         :root {
             --primary: #6366f1;
@@ -40,6 +41,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .container {
@@ -196,7 +207,10 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Quizza</a>
+            <a href="index.html" class="logo">
+                <img class="logo-icon" src="app-icon.png" alt="Quizza app icon">
+                <span>Quizza</span>
+            </a>
     </nav>
 
     <div class="container">
