@@ -6,29 +6,68 @@
     <title>Quizza challenge</title>
     <meta name="description" content="Someone challenged you to beat their Quizza score.">
     <link rel="icon" type="image/png" href="../app-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: system-ui, -apple-system, sans-serif;
-            background: #0b1220;
-            color: #fff;
+            font-family: "Nunito", system-ui, sans-serif;
+            background: #F6EFE4;
+            color: #1B2A4A;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 32px 20px;
         }
-        .card {
+        .wrap {
             max-width: 420px;
             width: 100%;
-            background: linear-gradient(160deg, #11998e, #38ef7d);
-            border-radius: 24px;
-            padding: 32px 28px;
         }
-        .kicker { font-size: 12px; letter-spacing: 0.14em; font-weight: 700; opacity: 0.75; }
-        h1 { font-size: 1.7rem; margin: 12px 0 8px; line-height: 1.2; }
-        .score { font-size: 3.4rem; font-weight: 800; margin: 12px 0; }
-        p { margin: 0 0 12px; opacity: 0.92; }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            font-family: "Fredoka", sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        .brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 2.5px solid #1B2A4A;
+            box-shadow: 4px 4px 0 #1B2A4A;
+        }
+        .card {
+            background: #FFF8EE;
+            border: 2.5px solid #1B2A4A;
+            border-radius: 18px;
+            padding: 32px 28px;
+            box-shadow: 8px 8px 0 #E23D28;
+        }
+        .kicker {
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            font-weight: 800;
+            color: #E23D28;
+        }
+        h1 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.7rem;
+            margin: 12px 0 8px;
+            line-height: 1.2;
+        }
+        .score {
+            font-family: "Fredoka", sans-serif;
+            font-size: 3.4rem;
+            font-weight: 700;
+            margin: 12px 0;
+            color: #E23D28;
+        }
+        p { margin: 0 0 12px; }
         .actions { display: grid; gap: 10px; margin-top: 24px; }
         a.btn {
             display: block;
@@ -36,25 +75,32 @@
             text-decoration: none;
             border-radius: 14px;
             padding: 14px 16px;
-            font-weight: 700;
+            font-weight: 800;
+            border: 2.5px solid #1B2A4A;
         }
-        .primary { background: #0b1220; color: #fff; }
-        .secondary { background: rgba(255,255,255,0.92); color: #0b1220; }
-        .fallback { margin-top: 18px; font-size: 0.85rem; opacity: 0.85; }
+        .primary { background: #E23D28; color: #fff; box-shadow: 4px 4px 0 #1B2A4A; }
+        .secondary { background: #FFF8EE; color: #1B2A4A; }
+        .fallback { margin-top: 18px; font-size: 0.85rem; color: #4A5568; }
         .fallback a { color: inherit; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="kicker">QUIZZA CHALLENGE</div>
-        <h1 id="headline">Beat this score</h1>
-        <div class="score" id="score">—</div>
-        <p id="detail">Open Quizza and play the same category.</p>
-        <div class="actions">
-            <a class="btn primary" id="open-app" href="quizza://challenge">Open in Quizza</a>
-            <a class="btn secondary" href="https://apps.apple.com/app/id6758245751">Download on the App Store</a>
+    <div class="wrap">
+        <div class="brand">
+            <img src="../app-icon.png" alt="Quizza">
+            <span>Quizza</span>
         </div>
-        <p class="fallback">No app yet? The App Store button installs Quizza. Then come back to this link.</p>
+        <div class="card">
+            <div class="kicker">QUIZZA CHALLENGE</div>
+            <h1 id="headline">Beat this score</h1>
+            <div class="score" id="score">—</div>
+            <p id="detail">Open Quizza and play the same category.</p>
+            <div class="actions">
+                <a class="btn primary" id="open-app" href="quizza://challenge">Open in Quizza</a>
+                <a class="btn secondary" href="https://apps.apple.com/app/id6758245751">Download on the App Store</a>
+            </div>
+            <p class="fallback">No app yet? The App Store button installs Quizza. Then come back to this link.</p>
+        </div>
     </div>
     <script>
         const params = new URLSearchParams(window.location.search);
