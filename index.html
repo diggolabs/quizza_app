@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizza - The Trivia Quiz App</title>
-    <meta name="description" content="Quizza - The Trivia Quiz App. Fast multiplayer trivia for iOS.">
+    <title>Quizza — Flags &amp; Capitals Quiz for iPhone</title>
+    <meta name="description" content="Name that flag. Name that capital. Finish a quiz in a minute, then challenge a friend. Free on the App Store.">
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="apple-touch-icon" href="app-icon.png">
     <style>
@@ -12,24 +12,17 @@
             --ink: #0f172a;
             --muted: #475569;
             --line: #e2e8f0;
-            --accent: #1d4ed8;
+            --accent: #5b4cdb;
             --bg: #f8fafc;
             --card: #ffffff;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: var(--ink);
             background: var(--bg);
             line-height: 1.7;
         }
-
         header {
             position: sticky;
             top: 0;
@@ -38,7 +31,6 @@
             border-bottom: 1px solid var(--line);
             z-index: 10;
         }
-
         .nav {
             max-width: 980px;
             margin: 0 auto;
@@ -48,7 +40,6 @@
             justify-content: space-between;
             gap: 16px;
         }
-
         .logo {
             font-size: 1.25rem;
             font-weight: 700;
@@ -59,29 +50,15 @@
             align-items: center;
             gap: 10px;
         }
-
         .logo-icon {
             width: 34px;
             height: 34px;
             border-radius: 9px;
             border: 1px solid var(--line);
         }
-
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            text-decoration: none;
-        }
-
-        .nav-links a:hover {
-            color: var(--ink);
-        }
-
+        .nav-links { display: flex; gap: 18px; font-size: 0.9rem; }
+        .nav-links a { color: var(--muted); text-decoration: none; }
+        .nav-links a:hover { color: var(--ink); }
         main {
             max-width: 980px;
             margin: 0 auto;
@@ -90,40 +67,31 @@
             grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
             gap: 48px;
         }
-
         .hero h1 {
             font-size: 2.6rem;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
+            line-height: 1.15;
         }
-
-        .hero p {
-            color: var(--muted);
-            margin-bottom: 6px;
+        .hero p { color: var(--muted); margin-bottom: 10px; }
+        .store-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+            padding: 12px 18px 12px 14px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
         }
-
-        .doc section {
-            margin-top: 28px;
-        }
-
-        .doc h2 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .doc p,
-        .doc li {
-            color: var(--muted);
-        }
-
-        .doc ul {
-            margin: 12px 0 0 20px;
-        }
-
-        .doc li {
-            margin-bottom: 8px;
-        }
-
+        .store-badge strong { display: block; font-size: 1.05rem; line-height: 1.2; }
+        .store-badge span { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.75; }
+        .doc section { margin-top: 28px; }
+        .doc h2 { font-size: 1.3rem; margin-bottom: 10px; }
+        .doc p, .doc li { color: var(--muted); }
+        .doc ul { margin: 12px 0 0 20px; }
+        .doc li { margin-bottom: 8px; }
         .card {
             background: var(--card);
             border: 1px solid var(--line);
@@ -131,34 +99,16 @@
             padding: 20px;
             box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
         }
-
-        .screenshots {
-            display: grid;
-            gap: 14px;
-            margin-top: 16px;
-        }
-
+        .screenshots { display: grid; gap: 14px; margin-top: 16px; }
         .screenshots img {
             width: 100%;
             border-radius: 16px;
             border: 1px solid var(--line);
             display: block;
         }
-
-        .meta {
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-
-        .contact {
-            margin-top: 24px;
-        }
-
-        .contact a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
+        .meta { font-size: 0.85rem; color: var(--muted); }
+        .contact { margin-top: 24px; }
+        .contact a { color: var(--accent); text-decoration: none; }
         footer {
             max-width: 980px;
             margin: 0 auto;
@@ -167,11 +117,8 @@
             color: var(--muted);
             font-size: 0.85rem;
         }
-
         @media (max-width: 900px) {
-            main {
-                grid-template-columns: 1fr;
-            }
+            main { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -180,7 +127,7 @@
         <div class="nav">
             <a class="logo" href="index.html">
                 <img class="logo-icon" src="app-icon.png" alt="Quizza app icon">
-                <span>Quizza - The Trivia Quiz App</span>
+                <span>Quizza</span>
             </a>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
@@ -194,10 +141,30 @@
     <main>
         <div class="doc">
             <div class="hero">
-                <h1>Quizza - The Trivia Quiz App</h1>
-                <p class="meta">Fast multiplayer trivia for iOS.</p>
-                <p>Quizza is a quick, competitive trivia game designed for short, high‑energy matches. Play solo, challenge friends, and climb the leaderboard.</p>
+                <h1>Name that flag.<br>Name that capital.</h1>
+                <p class="meta">A one-minute trivia quiz for iPhone.</p>
+                <p>Start with World Flags and Capital Cities. Finish seven questions in under a minute. Then send a friend a link and see if they can beat your score. No waiting for an opponent.</p>
+                <a class="store-badge" href="https://apps.apple.com/app/id6758245751">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M16.365 12.63c-.03-3.2 2.61-4.74 2.73-4.81-1.49-2.18-3.81-2.48-4.63-2.51-1.97-.2-3.84 1.16-4.84 1.16-1.02 0-2.56-1.14-4.21-1.11-2.16.03-4.16 1.26-5.27 3.2-2.26 3.92-.58 9.71 1.62 12.89 1.08 1.56 2.35 3.3 4.02 3.24 1.62-.07 2.23-1.04 4.19-1.04 1.94 0 2.51 1.04 4.21 1.01 1.74-.03 2.84-1.59 3.9-3.16 1.23-1.8 1.74-3.55 1.77-3.64-.04-.02-3.38-1.3-3.41-5.13zM13.5 3.8c.89-1.08 1.49-2.58 1.33-4.08-1.29.05-2.85.86-3.77 1.94-.83.96-1.56 2.5-1.36 3.97 1.44.11 2.91-.73 3.8-1.83z"/>
+                    </svg>
+                    <span>
+                        <span>Download on the</span>
+                        <strong>App Store</strong>
+                    </span>
+                </a>
             </div>
+
+            <section>
+                <h2>What’s in the app</h2>
+                <ul>
+                    <li>World Flags and Capital Cities up front, plus 23 more categories</li>
+                    <li>Play now — Quick Play starts a solo quiz immediately</li>
+                    <li>Challenge a friend with a share link (they don’t have to be online)</li>
+                    <li>Optional live 1v1 when someone else is around</li>
+                    <li>Daily streaks. Free games every day. Optional rewarded ads for extras.</li>
+                </ul>
+            </section>
 
             <section>
                 <h2>Support</h2>
@@ -206,17 +173,22 @@
         </div>
 
         <aside class="card">
-            <div class="meta">In‑app preview</div>
-            <h2>Quizza Screen</h2>
-            <p class="meta">A minimal preview from the current build.</p>
-            <div class="screenshots">
-                <img src="screenshots/screen-1.png" alt="Quizza home screen">
-            </div>
+            <div class="meta">From Diggolabs</div>
+            <h2>On the App Store</h2>
+            <p class="meta">Quizza — Flags &amp; Capitals. Free to download on iPhone.</p>
+            <p style="margin-top:16px">
+                <a class="store-badge" href="https://apps.apple.com/app/id6758245751">
+                    <span>
+                        <span>Get it on the</span>
+                        <strong>App Store</strong>
+                    </span>
+                </a>
+            </p>
         </aside>
     </main>
 
     <footer>
-        Quizza - The Trivia Quiz App © 2026 · All rights reserved.
+        Quizza © 2026 Diggolabs · <a href="https://diggolabs.tech">diggolabs.tech</a>
     </footer>
 </body>
 </html>

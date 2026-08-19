@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizza challenge</title>
+    <meta name="description" content="Someone challenged you to beat their Quizza score.">
+    <link rel="icon" type="image/png" href="../app-icon.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0b1220;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+        }
+        .card {
+            max-width: 420px;
+            width: 100%;
+            background: linear-gradient(160deg, #11998e, #38ef7d);
+            border-radius: 24px;
+            padding: 32px 28px;
+        }
+        .kicker { font-size: 12px; letter-spacing: 0.14em; font-weight: 700; opacity: 0.75; }
+        h1 { font-size: 1.7rem; margin: 12px 0 8px; line-height: 1.2; }
+        .score { font-size: 3.4rem; font-weight: 800; margin: 12px 0; }
+        p { margin: 0 0 12px; opacity: 0.92; }
+        .actions { display: grid; gap: 10px; margin-top: 24px; }
+        a.btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 14px;
+            padding: 14px 16px;
+            font-weight: 700;
+        }
+        .primary { background: #0b1220; color: #fff; }
+        .secondary { background: rgba(255,255,255,0.92); color: #0b1220; }
+        .fallback { margin-top: 18px; font-size: 0.85rem; opacity: 0.85; }
+        .fallback a { color: inherit; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="kicker">QUIZZA CHALLENGE</div>
+        <h1 id="headline">Beat this score</h1>
+        <div class="score" id="score">—</div>
+        <p id="detail">Open Quizza and play the same category.</p>
+        <div class="actions">
+            <a class="btn primary" id="open-app" href="quizza://challenge">Open in Quizza</a>
+            <a class="btn secondary" href="https://apps.apple.com/app/id6758245751">Download on the App Store</a>
+        </div>
+        <p class="fallback">No app yet? The App Store button installs Quizza. Then come back to this link.</p>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get("cn") || params.get("c") || "this quiz";
+        const name = params.get("n") || "A friend";
+        const score = params.get("s") || "";
+        const correct = params.get("a");
+        const total = params.get("q");
+
+        document.getElementById("headline").textContent = "Beat " + name + " at " + category;
+        if (score) document.getElementById("score").textContent = score;
+        let detail = "Play the same category and see who wins.";
+        if (correct && total) detail = name + " got " + correct + "/" + total + " correct.";
+        document.getElementById("detail").textContent = detail;
+
+        const appLink = "quizza://challenge?" + params.toString();
+        document.getElementById("open-app").href = appLink;
+        window.setTimeout(function () {
+            window.location.href = appLink;
+        }, 400);
+    </script>
+</body>
+</html>
